@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		body{width:940px;margin:0 auto;}
+		.box{width:57px;height: 57px;margin:20px;padding:50px;background-color: grey;display: block;float:left;cursor:pointer;}
+		span{width:50px;height:5px;background-color: white;display: block;margin:8px auto;transition: all 0.3s ease-in-out;}
+		.box:nth-child(1).active .bar:nth-child(1){transform: translateY(13px) rotate(45deg);}
+		.box:nth-child(1).active .bar:nth-child(2){opacity: 0;}
+		.box:nth-child(1).active .bar:nth-child(3){transform: translateY(-13px) rotate(-45deg);}
+
+
+		.box:nth-child(2).active .bar:nth-child(1){transform: translateY(13px);}
+		.box:nth-child(2).active .bar:nth-child(2){}
+		.box:nth-child(2).active .bar:nth-child(3){transform: translateY(-13px);}
+
+		.box:nth-child(3).active .bar:nth-child(1){transform: translateX(-10px) rotate(-45deg);width:40px;}
+		.box:nth-child(3).active .bar:nth-child(2){}
+		.box:nth-child(3).active .bar:nth-child(3){transform: translateX(-10px) rotate(45deg);width:40px;}
+
+		.box:nth-child(4).active .bar:nth-child(1){transform: translateX(10px) rotate(45deg);width:40px;}
+		.box:nth-child(4).active .bar:nth-child(2){}
+		.box:nth-child(4).active .bar:nth-child(3){transform: translateX(10px) rotate(-45deg);width:40px;}
+
+		.box:nth-child(5).active{transform: rotate(90deg);}
+		.box:nth-child(5).active .bar:nth-child(1){transform: translate(5px,8px) rotate(45deg);width:30px;}
+		.box:nth-child(5).active .bar:nth-child(2){opacity: 0;}
+		.box:nth-child(5).active .bar:nth-child(3){transform: translate(5px,0) rotate(-45deg);width:30px;}
+		
+		.box:nth-child(6).active .lbox{transform:rotate(45deg);transition:transform 0.3s ease-in-out 0.6s;}
+		.box:nth-child(6).active .bar:nth-child(1){transform: translateY(13px);transition:transform 0.3s ease-in-out 0.3s;}
+		.box:nth-child(6).active .bar:nth-child(2){width: 0;}
+		.box:nth-child(6).active .bar:nth-child(3){transform: rotate(90deg) translateX(-13px);transition-delay: 0.3s;}
+
+		.box:nth-child(7).active .bar:nth-child(1){transform: rotate(30deg);width:30px;}
+		.box:nth-child(7).active .bar:nth-child(2){transform: rotate(30deg);width:40px;}
+		.box:nth-child(7).active .bar:nth-child(3){transform: rotate(30deg);}
+
+		.box:nth-child(8).active .bar:nth-child(1){transform: translateY(13px);}
+		.box:nth-child(8).active .bar:nth-child(2){opacity: 0;}
+		.box:nth-child(8).active .bar:nth-child(3){transform: rotate(90deg) translateX(-13px);}
+
+
+		.box:nth-child(9) .lbox{border-radius:50%;border:5px solid rgba(255,255,255,0);}
+		.box:nth-child(9).active .lbox{border-radius:50%;border:5px solid rgba(255,255,255,1);transition: all 0.3s ease-in-out;}
+		.box:nth-child(9).active .bar:nth-child(1){transform: translateY(13px) rotate(45deg);width:30px;}
+		.box:nth-child(9).active .bar:nth-child(2){opacity: 0;}
+		.box:nth-child(9).active .bar:nth-child(3){transform: translateY(-13px) rotate(135deg);width:30px;}
+
+		.box:nth-child(10).active .lbox{transform:rotate(90deg);transition:all 0.3s ease-in-out;}
+		.box:nth-child(10).active .bar:nth-child(1){width:30px;}
+		.box:nth-child(10).active .bar:nth-child(2){width:40px;}
+		.box:nth-child(10).active .bar:nth-child(3){}
+
+		@keyframes myout{
+			from{transform:scale(1,1);}
+			to{transform:scale(0,0);}
+		}
+
+		@keyframes myin{
+			from{transform:scale(0,0);}
+			to{transform:scale(1,1);}
+		}
+
+		.box:nth-child(11).active .lbox{animation:myout 0.3s ease-in-out,myin 0.3s ease-in-out 0.3s;}
+		.box:nth-child(11).active .bar:nth-child(1){transform: translateY(13px) rotate(45deg);}
+		.box:nth-child(11).active .bar:nth-child(2){opacity:0;}
+		.box:nth-child(11).active .bar:nth-child(3){transform: translateY(-13px) rotate(-45deg);}
+
+		.box:nth-child(12).active .bar:nth-child(1){transform:translateX(-50px);opacity:0;}
+		.box:nth-child(12).active .bar:nth-child(2){}
+		.box:nth-child(12).active .bar:nth-child(3){transform:translateX(50px);opacity:0;}
+
+	</style>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".box").click(function(){
+				$(this).toggleClass('active');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+
+
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+	<div class="box">
+		<div class="lbox">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+	<div class="box">
+		<span class="bar"></span>
+		<span class="bar"></span>
+		<span class="bar"></span>
+	</div>
+
+
+	<div class="box">
+		<div class="lbox">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+	<div class="box">
+		<div class="lbox">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+	<div class="box">
+		<div class="lbox">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+	<div class="box">
+		<div class="lbox">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+	</div>
+</body>
+</html>
